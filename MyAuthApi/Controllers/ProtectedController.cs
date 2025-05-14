@@ -20,5 +20,17 @@ namespace MyAuthApi.Controllers
         {
             return Ok(User.Claims.Select(c => new { c.Type, c.Value }));
         }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("admin/data")]
+        public IActionResult GetAdminData()
+        {
+            return Ok("Hello Admin, here is your secret data.");
+        }
+        [Authorize(Roles = "Admin", Policy = "AdultFromIndia")]
+        [HttpGet("adminPolicy/data")]
+        public IActionResult GetAdminWithPolicy()
+        {
+            return Ok("Hello Admin, here is your secret data.");
+        }
     }
 }

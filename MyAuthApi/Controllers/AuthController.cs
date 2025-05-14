@@ -21,7 +21,8 @@ namespace MyAuthApi.Controllers
                 {
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.DateOfBirth, user.DateOfBirth.ToString("yyyy-MM-dd")),
-                new Claim(ClaimTypes.Country, user.Country)
+                new Claim(ClaimTypes.Country, user.Country),
+                new Claim(ClaimTypes.Role,user.Role)
             };
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("super_secret_key_that_is_very_long_123456"));
