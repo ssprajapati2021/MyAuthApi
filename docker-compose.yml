@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  myauthapi:
+    build:
+      context: ./MyAuthApi
+      dockerfile: Dockerfile
+    image: ssprajapati2021/myauthapi:latest
+    ports:
+      - "80:80"

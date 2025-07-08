@@ -1,0 +1,25 @@
+name: Deploy to Azure Container App using Service Principal
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Container App
+        uses: azure/container-apps-deploy-action@v1
+        with:
+          image: ssprajapati2021/myauthapi:latest
+          container-app-name: my-auth-container-app
+          resource-group: rg-container

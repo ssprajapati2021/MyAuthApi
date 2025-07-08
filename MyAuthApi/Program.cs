@@ -62,7 +62,10 @@ namespace MyAuthApi
         }
     });
             });
-
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(80); //This line is critical for Azure Container Instance
+            });
             var app = builder.Build();
 
             app.UseSwagger();
