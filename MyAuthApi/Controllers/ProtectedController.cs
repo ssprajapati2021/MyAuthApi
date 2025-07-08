@@ -35,7 +35,7 @@ namespace MyAuthApi.Controllers
         [HttpGet("adminPolicy/anonymous")]
         public IActionResult GetAnonymous()
         {
-            return Ok("Hello Anonymous.");
+            return Ok("Hello Anonymous how r you.");
         }
     }
 }
