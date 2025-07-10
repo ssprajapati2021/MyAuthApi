@@ -5,6 +5,6 @@ services:
     build:
       context: ./MyAuthApi
       dockerfile: Dockerfile
-    image: ssprajapati2021/myauthapi:latest
+    image: ssprajapati2021/myauthapi:TestBranch
     ports:
       - "80:80"
