@@ -60,6 +60,6 @@ jobs:
       - name: Deploy to Azure Container App
         uses: azure/container-apps-deploy-action@v1
         with:
-          imageToDeploy: ssprajapati2021/myauthapi:latest
+          imageToDeploy: ssprajapati2021/myauthapi
           containerAppName: ${{ steps.set-name.outputs.name }}
           resourceGroup: rg-container
