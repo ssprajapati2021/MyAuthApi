@@ -41,7 +41,7 @@ jobs:
           context: ./MyAuthApi
           file: ./MyAuthApi/Dockerfile
           push: true
-          tags: ssprajapati2021/myauthapi:latest
+          tags: ssprajapati2021/myauthapi
 
       - name: Azure Login
         uses: azure/login@v1
@@ -60,6 +60,6 @@ jobs:
       - name: Deploy to Azure Container App
         uses: azure/container-apps-deploy-action@v1
         with:
-          imageToDeploy: ssprajapati2021/myauthapi
+          imageToDeploy: ssprajapati2021/myauthapi:latest
           containerAppName: ${{ steps.set-name.outputs.name }}
           resourceGroup: rg-container
